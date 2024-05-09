@@ -1,4 +1,8 @@
+using expense_application;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.AddSqlServerDbContext<ExpenseAppContext>("Data Source=GOATGRADGIFT;Integrated Security=True;Trust Server Certificate=True");
 
 // Add services to the container.
 
@@ -11,12 +15,21 @@ if (!app.Environment.IsDevelopment())
 {
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
+    using (var scope = app.Services.CreateScope())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<ExpenseAppContext>();
+        context.Database.EnsureCreated();
+    }
+}
+else
+{
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
+    app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-
 
 app.MapControllerRoute(
     name: "default",
