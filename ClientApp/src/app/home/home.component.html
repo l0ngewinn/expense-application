@@ -1,2 +1,24 @@
-<h1>Hello, {{ user.firstName }}!</h1>
-<p>You have ${{ budget }} left for {{ month }}.</p>
+<div class="container">
+  <div class="headingText">
+    <div class="textAlign">
+      <h1>Hello,</h1>
+      <h1 class="yellowText">{{ user.firstName }}</h1>
+      <h1>!</h1>
+    </div>
+    <div class="textAlign">
+      <p>You have</p>
+      <p class="redText"> ${{ budget }}</p>
+      <p style="margin-left:10px;">left for </p>
+      <p class="blueText">{{ month }}.</p>
+    </div>
+  </div>
+  <div>
+    <div class="textAlign">
+      <h4>You have spent</h4>
+      <h4 class="redText"> ${{ cost }}</h4>
+      <h4 style="margin-left:10px;">in</h4>
+      <h4 class="blueText">{{ month }}.</h4>
+    </div>
+  </div>
+  <app-expense-list></app-expense-list>
+</div>

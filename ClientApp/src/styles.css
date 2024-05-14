@@ -18,3 +18,19 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+.blueText {
+  color: #4793af;
+  margin-left: 10px;
+}
+.yellowText {
+  color: #ffc470;
+  margin-left: 10px;
+}
+.redText {
+  color: #dd5746;
+  margin-left: 10px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

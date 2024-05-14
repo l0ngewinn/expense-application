@@ -6,8 +6,9 @@ import { Category } from '../category';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css', '../../custom-theme.scss', '../../styles.css']
 })
+
 export class HomeComponent {
   expense1: Expense = {
     id: 1,
@@ -80,7 +81,7 @@ export class HomeComponent {
 
   public categories: Category[] = [this.category1, this.category2, this.category3]
 
-  getBudget() {
+  getBudget(): [number, number] {
     var expenseCost = 0;
     for (var i = 0; i < this.expenses.length; i++) {
       expenseCost += this.expenses[i].cost;
@@ -89,10 +90,11 @@ export class HomeComponent {
     for (var j = 0; j < this.categories.length; j++) {
       limit += this.categories[j].limit
     }
-    return limit - expenseCost;
+    return [expenseCost, limit - expenseCost];
   }
 
-  budget = this.getBudget();
+  cost = this.getBudget()[0];
+  budget = this.getBudget()[1];
 
   date:Date = new Date();
   getMonth() {

@@ -1,0 +1,14 @@
+.textAlign {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.headingText {
+  border-bottom: 1px solid rgb(227, 227, 227);
+  margin-bottom: 36px;
+}
