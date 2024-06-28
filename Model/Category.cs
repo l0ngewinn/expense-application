@@ -13,5 +13,5 @@ public class Category {
     public int Limit { get; set; }
 
     [ForeignKey("UserId")]
-    public int FKUserId { get; set;}
+    public int FKUserIdCategory { get; set;}
 }

@@ -22,5 +22,5 @@ public class Expense {
     public int FKCategoryId { get; set; }
 
     [ForeignKey("UserId")]
-    public int FKUserId { get; set; }
+    public int FKUserIdExpense { get; set; }
 }
