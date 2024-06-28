@@ -2,7 +2,7 @@ using expense_application;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddSqlServerDbContext<ExpenseAppContext>("Data Source=GOATGRADGIFT;Integrated Security=True;Trust Server Certificate=True");
+builder.AddSqlServerDbContext<ExpenseAppContext>("Server=localhost;Database=master;Trusted_connection=True;");
 
 // Add services to the container.
 
