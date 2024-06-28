@@ -1,3 +1,4 @@
+using System.Data.SqlClient;
 using expense_application;
 
 var builder = WebApplication.CreateBuilder(args);

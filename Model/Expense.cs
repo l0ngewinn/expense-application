@@ -19,8 +19,8 @@ public class Expense {
     public int Cost { get; set; }
 
     [ForeignKey("CategoryId")]
-    public int CategoryId { get; set; }
+    public int FKCategoryId { get; set; }
 
     [ForeignKey("UserId")]
-    public int UserId { get; set; }
+    public int FKUserId { get; set; }
 }
