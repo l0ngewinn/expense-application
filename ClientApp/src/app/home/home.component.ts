@@ -83,13 +83,11 @@ export class HomeComponent {
 
   getBudget(): [number, number] {
     var expenseCost = 0;
-    for (var i = 0; i < this.expenses.length; i++) {
-      expenseCost += this.expenses[i].cost;
-    }
     var limit = 0;
-    for (var j = 0; j < this.categories.length; j++) {
-      limit += this.categories[j].limit
-    }
+
+    this.expenses.forEach((expense) => expenseCost += expense.cost);
+    this.categories.forEach((category) => limit += category.limit);
+    
     return [expenseCost, limit - expenseCost];
   }
 
